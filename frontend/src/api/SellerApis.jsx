@@ -2,7 +2,7 @@ import { axiosInstance } from "../config/axiosInstance.jsx";
 
 export const registerSeller = async (data) => {
   try {
-    const response = await axiosInstance.post("/api/auth/seller/register", data);
+    const response = await axiosInstance.post("/auth/seller/register", data);
     console.log(response);
     if(response){
         return response.data.seller
@@ -14,7 +14,7 @@ export const registerSeller = async (data) => {
 
 export const loginSeller = async (data) => {
   try {
-    const response = await axiosInstance.post("/api/auth/seller/login", data);
+    const response = await axiosInstance.post("/auth/seller/login", data);
     console.log(response);
     if(response){
         return response.data.seller

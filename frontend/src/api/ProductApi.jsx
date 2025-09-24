@@ -2,7 +2,7 @@ import { axiosInstance } from "../config/axiosInstance";
 
 export const fetchProductDetail = async (id) => {
   try {
-    let response = await axiosInstance.get(`/api/products/product-detail/${id}`);
+    let response = await axiosInstance.get(`/products/product-detail/${id}`);
 
     if (response) {
       return response.data.product;
@@ -15,7 +15,7 @@ export const fetchProductDetail = async (id) => {
 export const createProduct = async (data) => {
   try {
     console.log("Creating product with data:", data);
-    const res = await axiosInstance.post("/api/products/create-product", data, {
+    const res = await axiosInstance.post("/products/create-product", data, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -30,7 +30,7 @@ export const createProduct = async (data) => {
 
 export const fetchSellerProducts = async() => {
   try {
-      const res = await axiosInstance.get("/api/products/seller-products")
+      const res = await axiosInstance.get("/products/seller-products")
       console.log(res);
       if (res) {
         return res.data.products;
